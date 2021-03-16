@@ -1,0 +1,1910 @@
+/* v1.6.3 */
+
+
+/* DONATION TABS */
+
+.donation-type-selector {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: none;
+}
+
+.give-recurring-form .donation-type-selector {
+    display: flex;
+}
+
+.donation-type-selector .donation-type {
+    flex: 1 1 50%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #262626;
+    background: #fff;
+    background-image: -webkit-linear-gradient(top, #fff 0, #f9f9f9 100%);
+    background-image: -o-linear-gradient(top, #fff 0, #f9f9f9 100%);
+    background-image: linear-gradient(to bottom, #fff 0, #f9f9f9 100%);
+    background-repeat: repeat-x;
+    display: block;
+    width: 100%;
+    padding: 0;
+    line-height: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+    border: 0;
+    margin: 0;
+    outline: 0;
+    text-align: center;
+    height: 50px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.donation-type-selector .donation-type:hover {
+    background: #f7f7f7;
+    color: #262626;
+}
+
+.donation-type-selector .donation-type .button-gradient {
+    opacity: 0;
+    -webkit-transition: opacity 50ms ease-in-out;
+    -o-transition: opacity 50ms ease-in-out;
+    transition: opacity 50ms ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.donation-type-selector .donation-type.selected .button-gradient {
+    opacity: 1;
+    background-repeat: repeat-x;
+}
+
+.donation-type-selector .donation-type.one-time .button-gradient {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.donation-type-selector .donation-type.recurring .button-gradient {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.donation-type-selector .donation-type .button-text {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.donation-type-selector .donation-type.selected .button-text {
+    color: #fff;
+}
+
+/* Overriding the font color to match harmonyfund.org */
+.give-stripe-becs-mandate-acceptance-text, .give-stripe-sepa-mandate-acceptance-text, p,
+.give-embed-form,
+.give-tributes-dedicate-donation input[type=radio]+label,
+.payment .heading,
+.payment .subheading {
+    color: #262626;
+}
+
+/* Move the warning down */
+
+.give_error.give_warning {
+    order: 100;
+}
+
+
+/* SINGLE PAGE FORM */
+
+.give-form-wrap.give-display-onpage * {
+    box-sizing: border-box;
+}
+
+.give-form-wrap.give-display-onpage p {
+    margin-bottom: 10px;
+}
+
+/* Hide the general title */
+
+.give-display-onpage .give-form-title {
+    display: none;
+}
+
+.give-form-wrap.give-display-onpage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -2%;
+}
+
+.give-form-wrap.give-display-onpage .give-form-title,
+.give-form-wrap.give-dispaly-onpage .give_error.give_warning {
+    flex: 1 1 100%;
+}
+
+.give-display-onpage [id*=give-form] .give-recurring-donors-choice {
+    display: none;
+}
+
+.give-form-wrap.give-display-onpage #hf-give-form-content-wrap {
+    flex: 1 1 46%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 4px rgb(0 0 0 / 40%);
+    overflow: hidden;
+    min-width: 400px;
+    margin: 0 1% 40px;
+}
+
+.give-display-onpage .hf-give-form-featured-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.give-display-onpage .hf-give-form-featured-image img {
+    max-width: 100%;
+    visibility: hidden;
+}
+
+.give-display-onpage p,
+.give-display-onpage li,
+.give-display-onpage label {
+    font-size: 16px;
+}
+
+.give-display-onpage h3 {
+    font-size: 18px !important;
+    color: inherit !important;
+    margin-bottom: 10px;
+}
+
+.give-display-onpage .give-label {
+    padding: 0;
+}
+
+.give-display-onpage input,
+.give-display-onpage input.required {
+    font-size: 18px;
+    background: #fafafa;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    transition: color .1s ease-in-out, background-color .1s ease-in-out;
+    vertical-align: baseline;
+    line-height: 1.5;
+}
+
+.give-display-onpage .hf-content-wrap {
+    padding: 20px;
+}
+
+.give-display-onpage .hf-content-wrap div.give-form-content-wrap {
+    margin: 0;
+}
+
+.give-form-wrap.give-display-onpage .give-form {
+    flex: 1 1 48%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 4px rgb(0 0 0 / 40%);
+    overflow: hidden;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1% 40px;
+}
+
+.give-display-onpage .hf-give-form-title {
+    text-align: center;
+}
+
+.give-display-onpage #give-donation-level-button-wrap {
+    order: 5;
+}
+
+.give-display-onpage .give-total-wrap {
+    order: 10;
+}
+
+.give-display-onpage .give-fee-recovery-donors-choice.give-fee-message {
+    order: 20;
+}
+
+.give-display-onpage .donation-amount-period {
+    order: 30;
+}
+
+.give-display-onpage .give-tributes-dedicate-donation {
+    order: 25;
+}
+
+.give-display-onpage #give-payment-mode-select {
+    order: 25;
+}
+
+.give-display-onpage #give_purchase_form_wrap {
+    order: 25;
+}
+
+.give-display-onpage #give-donation-level-button-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px -10px 0;
+}
+
+.give-display-onpage #give-donation-level-button-wrap li {
+    flex: 1 1 28%;
+    padding: 0 10px 10px;
+    margin-right: 0;
+    min-height: 44px;
+    display: flex;
+}
+
+.give-display-onpage #give-donation-level-button-wrap li .give-btn-level-custom {
+    font-size: 14px;
+    line-height: 15px;
+    padding: 2px 8px;
+}
+
+.give-display-onpage .give-btn {
+    color: #262626;
+    background: #fff;
+    background-image: -webkit-linear-gradient(top, #fff 0, #f9f9f9 100%);
+    background-image: -o-linear-gradient(top, #fff 0, #f9f9f9 100%);
+    background-image: linear-gradient(to bottom, #fff 0, #f9f9f9 100%);
+    padding: 8px 10px;
+    cursor: pointer;
+    line-height: 22px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 2px rgb(0 0 0 / 16%);
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1px;
+}
+
+.give-display-onpage .give-btn:hover {
+    background: #f7f7f7;
+    color: #262626;
+}
+
+.give-display-onpage .give-donation-amount {
+    display: flex;
+    flex-direction: row;
+}
+
+.give-display-onpage .give-donation-amount .give-cs-select-currency.give-cs-mini-dropdown {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.give-display-onpage .give-donation-amount .give-currency-symbol.give-currency-position-before {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 24px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.give-display-onpage .give-donation-amount input#give-amount {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 36px;
+    line-height: 50px;
+    height: 50px;
+    font-weight: 400;
+    vertical-align: middle;
+    color: #348ac5;
+    padding: 1px 7px;
+    margin: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.give-display-onpage fieldset.give-currency-switcher-wrap.form-row.form-row-wide {
+    order: 10;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 !important;
+}
+
+.give-display-onpage .give-currency-switcher-msg-wrap.give-hidden {
+    margin-bottom: 10px;
+}
+
+.give-display-onpage .give-fee-message-label {
+    padding: 0;
+}
+
+.give-display-onpage .give-fee-message-label input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.give-display-onpage .give-fee-message-label .give-fee-message-label-text {
+    font-size: 18px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 30%);
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    display: block;
+    transition: all 0.4s ease-out;
+}
+
+.give-display-onpage .give-fee-message-label .give-fee-message-label-text:before {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    content: "";
+    background-color: #bd4646;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(.4, 0, .2, 1);
+    opacity: 0;
+    z-index: -1;
+}
+
+.give-display-onpage .give-fee-message-label .give-fee-message-label-text:after {
+    width: 22px;
+    height: 22px;
+    content: "";
+    border: 2px solid #d1d7dc;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: -1px 0px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+
+.give-display-onpage .give-fee-message-label input[type="checkbox"]:checked~.give-fee-message-label-text {
+    border-color: #dddddd;
+    color: #fff;
+    background-color: #348ac5;
+}
+
+.give-display-onpage .give-fee-message-label input[type="checkbox"]:checked~.give-fee-message-label-text:before {
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+}
+
+.give-display-onpage .give-fee-message-label input[type="checkbox"]:checked~.give-fee-message-label-text:after {
+    background-color: #fff;
+    border-color: #d1d7dc;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23348ac5' fill-rule='nonzero'/%3E%3C/svg%3E ");
+}
+
+.give-display-onpage .give-tributes-dedicate-donation {
+    margin-bottom: 0 !important;
+}
+
+.give-display-onpage .give-tributes-dedicate-donation legend {
+    font-weight: 400;
+    text-decoration: underline;
+    letter-spacing: 0;
+    font-size: 16px;
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+}
+
+.give-display-onpage .give-tributes-dedicate-donation legend:hover {
+    cursor: pointer;
+}
+
+.give-display-onpage .give-tributes-dedicate-donation>div,
+.give-display-onpage .give-tributes-show-wrap {
+    display: none;
+}
+
+.give-display-onpage .give-tributes-label {
+    padding: 0;
+    margin: 0 !important;
+}
+
+.give-display-onpage .give_tributes_type_wrap,
+.give-display-onpage .give_tributes_info_wrap {
+    padding: 10px;
+    background-color: #f3f2f2;
+}
+
+.give-display-onpage .give_tributes_info_wrap {
+    margin-bottom: 10px;
+}
+
+.give-display-onpage .give_tributes_type_wrap {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.give-display-onpage .give_tributes_info_wrap {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.give-display-onpage .give-tribute-radio-ul,
+.give-display-onpage .give-tribute-radio-ul li {
+    margin-bottom: 0;
+}
+
+.give-display-onpage .give-tributes-type-radio {
+    padding: 0;
+}
+
+.give-display-onpage .donation-amount-period {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.give-display-onpage .donation-amount-period p {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 !important;
+}
+
+.give-display-onpage #give_purchase_submit {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.give-display-onpage .give-submit-button-wrap {
+    order: 55;
+    margin-top: 10px;
+}
+
+.give-display-onpage #give-final-total-wrap {
+    order: 10;
+    margin-bottom: 6px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.give-display-onpage .give-donation-total-label {
+    /* float: none; */
+}
+
+.give-display-onpage .give-final-total-amount {
+    color: #348ac5;
+    font-weight: 600;
+    font-size: 24px !important;
+}
+
+.give-display-onpage .fee-break-down-message {
+    order: 15;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.give-display-onpage .give-btn.give-submit {
+    background-color: #348ac5;
+    background-image: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 20px 10px;
+    margin-bottom: 6px;
+}
+
+.give-display-onpage div[id*="give-card-name-wrap"] input {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #32325D;
+    font-weight: 500;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    background-color: transparent;
+    border: none;
+    display: block;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 20.2px;
+}
+
+.give-display-onpage div[id*="give-card-name-wrap"] input::placeholder {
+    color: #000;
+}
+
+
+/* MULTI PAGE FORM */
+/* Hide the loader and show the form immediately */
+
+h2.hf-give-form-title {
+		font-size: 20px;
+		line-height: 1.3;
+		padding-right: 10px;
+		padding-left: 10px;
+		text-align: center;
+}
+
+.give-viewing-form-in-iframe * {
+    box-sizing: border-box;
+}
+
+.give-viewing-form-in-iframe .donation-type-selector {
+    margin: 0 30px 0 !important;
+}
+
+/* Remove the content below "Choose Amount" header. If you want to add back the contents, remove this */
+.choose-amount .content {
+    display: none;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn {
+    padding: 8px;
+    box-shadow: 0 1px 5px 1px rgb(0 0 0 / 36%);
+    background: #fff !important;
+    background-image: -webkit-linear-gradient(top, #fff 0, #f9f9f9 100%) !important;
+    background-image: -o-linear-gradient(top, #fff 0, #f9f9f9 100%) !important;
+    background-image: linear-gradient(to bottom, #fff 0, #f9f9f9 100%) !important;
+    color: #333 !important;
+    border: none !important;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn:hover {
+    /* background: #cecece!important; */
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn.give-btn-level-custom {
+    padding: 2px 8px;
+    font-size: 16px;
+}
+.give-viewing-form-in-iframe .give-currency-symbol.give-currency-position-before {
+    /* text-align: center !important; */
+}
+.give-viewing-form-in-iframe .give-currency-symbol.give-currency-position-before:after {
+    content: 'Choose currency';
+    display: block;
+    font-size: 14px;
+    line-height: 12px;
+    margin-top: -1px;
+    margin-right: -16px;
+}
+.give-viewing-form-in-iframe .give-currency-switcher-msg {
+    /* margin-left: 20px !important; */
+    /* margin-right: 20px !important; */
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn.give-default-level {
+    /* box-shadow: none; */
+}
+
+.give-viewing-form-in-iframe [id*=give-form] .give-recurring-donors-choice {
+    display: none;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap {
+    order: 5;
+    margin-top: 10px !important;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-total-wrap {
+    order: 10;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-total-wrap .give-donation-amount {
+    width: auto;
+    max-width: 100%;
+    margin: 10px 30px !important;
+}
+
+.give-viewing-form-in-iframe .choose-amount .give-donation-amount .give-amount-top {
+    width: 100% !important;
+    max-width: 100%;
+    text-align: center;
+}
+
+.give-viewing-form-in-iframe .donation-amount-period {
+    order: 100;
+    height: 20px;
+    background: none;
+    /* margin-bottom: 15px; */
+}
+
+.give-viewing-form-in-iframe .donation-amount-period p {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 !important;
+}
+
+.give-viewing-form-in-iframe form[id*=give-form] .give-donation-amount {
+    padding: 10px 20px;
+    margin-top: 10px !important;
+}
+
+.give-viewing-form-in-iframe .hf-advance-btn-wrapper {
+    order: 99;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.give-viewing-form-in-iframe .hf-advance-btn-wrapper:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+.hide-advance-wrapper .hf-advance-btn-wrapper:before {
+    display: none;
+}
+.give-viewing-form-in-iframe .hf-advance-btn-wrapper:hover {
+    cursor: pointer;
+}
+.hide-advawrapper .hf-advance-btn-wrapper:hover {
+    cursor: auto;
+}
+.give-viewing-form-in-iframe .advance-btn,
+.give-viewing-form-in-iframe .download-btn,
+.give-viewing-form-in-iframe .give-submit {
+    margin-top: 15px;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+    width: auto;
+}
+.give-viewing-form-in-iframe .give-submit {
+    margin-top: 0;
+    margin-bottom: 10px !important;
+}
+
+.give-viewing-form-in-iframe .advance-btn,
+.give-viewing-form-in-iframe .download-btn {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.payment #give_purchase_submit input[value=stripe_apple_pay]~.give-stripe-payment-request-button.StripeElement, .payment #give_purchase_submit input[value=stripe_google_pay]~.give-stripe-payment-request-button.StripeElement {
+    margin-top: 16px;
+}
+.give-viewing-form-in-iframe .hf-advance-btn-wrapper #give-purchase-button {
+    width: 100%;
+}
+
+.give-viewing-form-in-iframe .give-tributes-dedicate-donation {
+    margin: 0 28px !important;
+    order: 15;
+    margin-top: 10px !important;
+}
+
+.give-viewing-form-in-iframe .give-tributes-dedicate-donation legend {
+    font-weight: 600 !important;
+    text-decoration: underline;
+    letter-spacing: 0;
+    font-size: 16px;
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+}
+
+.give-viewing-form-in-iframe .give-tributes-dedicate-donation legend:hover {
+    cursor: pointer;
+}
+
+.give-viewing-form-in-iframe .give-tributes-dedicate-donation>div,
+.give-viewing-form-in-iframe .give-tributes-show-wrap {
+    display: none;
+}
+
+.give-viewing-form-in-iframe .give-tributes-dedicate-donation>div {
+    padding: 5px 10px 0;
+    background-color: #f3f2f2;
+}
+
+.give-viewing-form-in-iframe .give-section.payment div {
+    order: 1;
+}
+
+.give-viewing-form-in-iframe .give-section.payment #give_checkout_user_info {
+    order: 5;
+}
+
+.give-viewing-form-in-iframe .give-section.payment #give-payment-mode-select {
+    order: 20;
+}
+
+.give-viewing-form-in-iframe .give-section.payment .give-fee-recovery-donors-choice {
+    order: 22;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 20px 10px !important;
+    border: none;
+    border-radius: 0;
+    background-color: #ededed;
+    border-left: 5px solid #cbcbcb;
+    border-right: 5px solid #cbcbcb;
+    box-shadow: none !important;
+    transition: all 0.4s ease-in-out;
+}
+
+.give-viewing-form-in-iframe .give-section.payment .give-fee-recovery-donors-choice label {
+    border-radius: 5px;
+}
+.give-viewing-form-in-iframe #donate-fieldset {
+    order: 25;
+    margin: 0 20px;
+    border: 5px solid #cbcbcb;
+    border-top-width: 0;
+    background-color: #ededed;
+    transition: all 0.4s ease-in-out;
+}
+
+.give-viewing-form-in-iframe .give-section.payment .give-fee-message-label-text {
+    color: #fff;
+}
+
+.give-viewing-form-in-iframe .give-section.payment .give-mailchimp-fieldset {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    background: #fff;
+    order: 10;
+}
+
+.give-viewing-form-in-iframe .give-section.payment .fee-break-down-message {
+    margin: 0 0 10px!important;
+    width: 100% !important;
+    order: 5;
+}
+
+.give-viewing-form-in-iframe .give-donation-total-label {
+    display: none;
+}
+
+.give-viewing-form-in-iframe .hf-payment-totals {
+    /* order: 0; */
+    /* margin-top: 30px; */
+    margin-bottom: 6px;
+}
+
+.give-viewing-form-in-iframe .hf-payment-totals p {
+    margin-bottom: 0;
+}
+
+.give-viewing-form-in-iframe #give-final-total-wrap {
+    margin-bottom: 0 !important;
+}
+
+.give-viewing-form-in-iframe #give-final-total-wrap .give-final-total-amount {
+    border: none !important;
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    color: #424242 !important;
+    float: none !important;
+}
+
+.give-viewing-form-in-iframe #give-recurring-modal-period-wrap {
+    display: block !important;
+    text-align: center;
+}
+
+.payment #give_purchase_submit #give-final-total-wrap {
+    /* display: block !important; */
+}
+
+.give-viewing-form-in-iframe .payment .hf-monthly-success {
+    background: #000;
+}
+
+/* FUND OPTIONS */
+.give-viewing-form-in-iframe .give-select-fund-row {
+    padding-top: 10px;
+}
+
+/* PAYMENT METHOD SELECTIONS */
+
+.give-viewing-form-in-iframe .__PrivateStripeElement {
+    width: 100% !important;
+}
+
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li {
+    background-color: inherit;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    display: block;
+    flex: 1 1 20%;
+    padding: 0 !important;
+    text-align: center;
+    margin-bottom: -5px !important;
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li label {
+    width: 100%;
+    padding: 20px;
+    display: block;
+    min-height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 5px solid #fff;
+    border-bottom-width: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.give-viewing-form-in-iframe .give-gateway-option-selected {
+    z-index: 9999;
+}
+
+.give-viewing-form-in-iframe .give-gateway-option-selected label {
+    font-weight: 500 !important;
+    border-color: #cbcbcb !important;
+}
+.give-viewing-form-in-iframe label {
+    /* border: 4px solid #fff; */
+    /* box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.5); */
+
+    /* color: #fff !important; */
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li label i {
+    margin-left: 8px;
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li label+i {
+    display: none;
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul .give-gateway-option:before,
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul input[type=radio]:checked+.give-gateway-option:after {
+    display: none;
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 0;
+}
+.give-viewing-form-in-iframe #give-gateway-option-stripe {
+    padding: 0 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important; 
+}
+.give-viewing-form-in-iframe #give-gateway-option-stripe_google_pay {
+    font-size: 1px !important;
+    background-origin: content-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    color: rgba(0,0,0,0) !important;
+    background-color: #000;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg role='presentation' fill='%23A1A1A1' class='main-header__logo-image' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 435.97 173.13'%3E%3Cpath d='M206.2,84.58v50.75H190.1V10h42.7a38.61,38.61,0,0,1,27.65,10.85A34.88,34.88,0,0,1,272,47.3a34.72,34.72,0,0,1-11.55,26.6q-11.2,10.68-27.65,10.67H206.2Zm0-59.15V69.18h27a21.28,21.28,0,0,0,15.93-6.48,21.36,21.36,0,0,0,0-30.63,21,21,0,0,0-15.93-6.65h-27Z' fill='%23fff'%3E%3C/path%3E%3Cpath d='M309.1,46.78q17.85,0,28.18,9.54T347.6,82.48v52.85H332.2v-11.9h-.7q-10,14.7-26.6,14.7-14.17,0-23.71-8.4a26.82,26.82,0,0,1-9.54-21q0-13.31,10.06-21.17t26.86-7.88q14.34,0,23.62,5.25V81.25A18.33,18.33,0,0,0,325.54,67,22.8,22.8,0,0,0,310,61.13q-13.49,0-21.35,11.38l-14.18-8.93Q286.17,46.78,309.1,46.78Zm-20.83,62.3a12.86,12.86,0,0,0,5.34,10.5,19.64,19.64,0,0,0,12.51,4.2,25.67,25.67,0,0,0,18.11-7.52q8-7.53,8-17.67-7.53-6-21-6-9.81,0-16.36,4.73C290.46,100.52,288.27,104.41,288.27,109.08Z' fill='%23fff'%3E%3C/path%3E%3Cpath d='M436,49.58,382.24,173.13H365.62l19.95-43.23L350.22,49.58h17.5l25.55,61.6h.35l24.85-61.6Z' fill='%23fff'%3E%3C/path%3E%3Cpath d='M141.14,73.64A85.79,85.79,0,0,0,139.9,59H72V86.73h38.89a33.33,33.33,0,0,1-14.38,21.88v18h23.21C133.31,114.08,141.14,95.55,141.14,73.64Z' fill='%234285f4'%3E%3C/path%3E%3Cpath d='M72,144c19.43,0,35.79-6.38,47.72-17.38l-23.21-18C90.05,113,81.73,115.5,72,115.5c-18.78,0-34.72-12.66-40.42-29.72H7.67v18.55A72,72,0,0,0,72,144Z' fill='%2334a853'%3E%3C/path%3E%3Cpath d='M31.58,85.78a43.14,43.14,0,0,1,0-27.56V39.67H7.67a72,72,0,0,0,0,64.66Z' fill='%23fbbc04'%3E%3C/path%3E%3Cpath d='M72,28.5A39.09,39.09,0,0,1,99.62,39.3h0l20.55-20.55A69.18,69.18,0,0,0,72,0,72,72,0,0,0,7.67,39.67L31.58,58.22C37.28,41.16,53.22,28.5,72,28.5Z' fill='%23ea4335'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.give-viewing-form-in-iframe #give-gateway-option-paypal-commerce {
+    font-size: 1px !important;
+    background-origin: content-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    color: rgba(0,0,0,0) !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='124' height='33'%3E%3Cpath fill='%23253B80' d='M46.211 6.749h-6.839a.95.95 0 0 0-.939.802l-2.766 17.537a.57.57 0 0 0 .564.658h3.265a.95.95 0 0 0 .939-.803l.746-4.73a.95.95 0 0 1 .938-.803h2.165c4.505 0 7.105-2.18 7.784-6.5.306-1.89.013-3.375-.872-4.415-.972-1.142-2.696-1.746-4.985-1.746zM47 13.154c-.374 2.454-2.249 2.454-4.062 2.454h-1.032l.724-4.583a.57.57 0 0 1 .563-.481h.473c1.235 0 2.4 0 3.002.704.359.42.469 1.044.332 1.906zM66.654 13.075h-3.275a.57.57 0 0 0-.563.481l-.145.916-.229-.332c-.709-1.029-2.29-1.373-3.868-1.373-3.619 0-6.71 2.741-7.312 6.586-.313 1.918.132 3.752 1.22 5.031.998 1.176 2.426 1.666 4.125 1.666 2.916 0 4.533-1.875 4.533-1.875l-.146.91a.57.57 0 0 0 .562.66h2.95a.95.95 0 0 0 .939-.803l1.77-11.209a.568.568 0 0 0-.561-.658zm-4.565 6.374c-.316 1.871-1.801 3.127-3.695 3.127-.951 0-1.711-.305-2.199-.883-.484-.574-.668-1.391-.514-2.301.295-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.499.589.697 1.411.554 2.317zM84.096 13.075h-3.291a.954.954 0 0 0-.787.417l-4.539 6.686-1.924-6.425a.953.953 0 0 0-.912-.678h-3.234a.57.57 0 0 0-.541.754l3.625 10.638-3.408 4.811a.57.57 0 0 0 .465.9h3.287a.949.949 0 0 0 .781-.408l10.946-15.8a.57.57 0 0 0-.468-.895z'/%3E%3Cpath fill='%23179BD7' d='M94.992 6.749h-6.84a.95.95 0 0 0-.938.802l-2.766 17.537a.569.569 0 0 0 .562.658h3.51a.665.665 0 0 0 .656-.562l.785-4.971a.95.95 0 0 1 .938-.803h2.164c4.506 0 7.105-2.18 7.785-6.5.307-1.89.012-3.375-.873-4.415-.971-1.142-2.694-1.746-4.983-1.746zm.789 6.405c-.373 2.454-2.248 2.454-4.062 2.454h-1.031l.725-4.583a.568.568 0 0 1 .562-.481h.473c1.234 0 2.4 0 3.002.704.359.42.468 1.044.331 1.906zM115.434 13.075h-3.273a.567.567 0 0 0-.562.481l-.145.916-.23-.332c-.709-1.029-2.289-1.373-3.867-1.373-3.619 0-6.709 2.741-7.311 6.586-.312 1.918.131 3.752 1.219 5.031 1 1.176 2.426 1.666 4.125 1.666 2.916 0 4.533-1.875 4.533-1.875l-.146.91a.57.57 0 0 0 .564.66h2.949a.95.95 0 0 0 .938-.803l1.771-11.209a.571.571 0 0 0-.565-.658zm-4.565 6.374c-.314 1.871-1.801 3.127-3.695 3.127-.949 0-1.711-.305-2.199-.883-.484-.574-.666-1.391-.514-2.301.297-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.501.589.699 1.411.554 2.317zM119.295 7.23l-2.807 17.858a.569.569 0 0 0 .562.658h2.822c.469 0 .867-.34.939-.803l2.768-17.536a.57.57 0 0 0-.562-.659h-3.16a.571.571 0 0 0-.562.482z'/%3E%3Cpath fill='%23253B80' d='M7.266 29.154l.523-3.322-1.165-.027H1.061L4.927 1.292a.316.316 0 0 1 .314-.268h9.38c3.114 0 5.263.648 6.385 1.927.526.6.861 1.227 1.023 1.917.17.724.173 1.589.007 2.644l-.012.077v.676l.526.298a3.69 3.69 0 0 1 1.065.812c.45.513.741 1.165.864 1.938.127.795.085 1.741-.123 2.812-.24 1.232-.628 2.305-1.152 3.183a6.547 6.547 0 0 1-1.825 2c-.696.494-1.523.869-2.458 1.109-.906.236-1.939.355-3.072.355h-.73c-.522 0-1.029.188-1.427.525a2.21 2.21 0 0 0-.744 1.328l-.055.299-.924 5.855-.042.215c-.011.068-.03.102-.058.125a.155.155 0 0 1-.096.035H7.266z'/%3E%3Cpath fill='%23179BD7' d='M23.048 7.667c-.028.179-.06.362-.096.55-1.237 6.351-5.469 8.545-10.874 8.545H9.326c-.661 0-1.218.48-1.321 1.132L6.596 26.83l-.399 2.533a.704.704 0 0 0 .695.814h4.881c.578 0 1.069-.42 1.16-.99l.048-.248.919-5.832.059-.32c.09-.572.582-.992 1.16-.992h.73c4.729 0 8.431-1.92 9.513-7.476.452-2.321.218-4.259-.978-5.622a4.667 4.667 0 0 0-1.336-1.03z'/%3E%3Cpath fill='%23222D65' d='M21.754 7.151a9.757 9.757 0 0 0-1.203-.267 15.284 15.284 0 0 0-2.426-.177h-7.352a1.172 1.172 0 0 0-1.159.992L8.05 17.605l-.045.289a1.336 1.336 0 0 1 1.321-1.132h2.752c5.405 0 9.637-2.195 10.874-8.545.037-.188.068-.371.096-.55a6.594 6.594 0 0 0-1.017-.429 9.045 9.045 0 0 0-.277-.087z'/%3E%3Cpath fill='%23253B80' d='M9.614 7.699a1.169 1.169 0 0 1 1.159-.991h7.352c.871 0 1.684.057 2.426.177a9.757 9.757 0 0 1 1.481.353c.365.121.704.264 1.017.429.368-2.347-.003-3.945-1.272-5.392C20.378.682 17.853 0 14.622 0h-9.38c-.66 0-1.223.48-1.325 1.133L.01 25.898a.806.806 0 0 0 .795.932h5.791l1.454-9.225 1.564-9.906z'/%3E%3C/svg%3E");
+}
+
+.give-viewing-form-in-iframe #give_purchase_form_wrap {
+    border: 5px solid #cbcbcb !important;
+    border-bottom-width: 0 !important;
+    transition: all 0.4s ease-in-out;
+    /* margin-top: -5px; */
+    z-index: 999;
+    /* background-color: #ededed; */
+}
+
+.give-viewing-form-in-iframe #give-gateway-option-stripe,
+.give-viewing-form-in-iframe #give_purchase_form_wrap.gateway-stripe,
+.give-viewing-form-in-iframe .donate-fieldset-stripe {
+    background-color: #4169E1 !important;
+}
+.give-viewing-form-in-iframe #give-gateway-option-stripe,
+.give-viewing-form-in-iframe #give_purchase_form_wrap.gateway-stripe span {
+    color: #fff !important;
+}
+.give-viewing-form-in-iframe #give-gateway-option-paypal-commerce,
+.give-viewing-form-in-iframe .donate-fieldset-paypal,
+.give-viewing-form-in-iframe #give_purchase_form_wrap.gateway-paypal-commerce {
+    background-color: #ededed !important;
+}
+.give-viewing-form-in-iframe .payment #give-payment-mode-select .gateway-stripe-apple_pay,
+.give-viewing-form-in-iframe .payment #give-payment-mode-select .gateway-stripe-google_pay {
+    padding: 5px 5px 10px;
+    display: block !important;
+    background-color: #000;
+}
+.give-viewing-form-in-iframe .payment #give_purchase_submit input[value=stripe_apple_pay]~.give-stripe-payment-request-button.StripeElement, 
+.give-viewing-form-in-iframe .payment #give_purchase_submit input[value=stripe_google_pay]~.give-stripe-payment-request-button.StripeElement {
+    margin-top: 0;
+    width: 100%; 
+    margin-bottom: 10px;
+}
+.give-viewing-form-in-iframe .donate-fieldset-google-pay,
+.give-viewing-form-in-iframe .donate-fieldset-apple-pay {
+    background-color: #000 !important;
+}
+
+.give-viewing-form-in-iframe #donate-fieldset.donate-fieldset-apple-pay .__PrivateStripeElement {
+    box-shadow: 1px 1px 16px 1px white !important;
+}
+.give-viewing-form-in-iframe .give-gateway-option-selected #give-gateway-option-paypal-commerce {
+    /* border-color: #fff; */
+    /* min-height: 78px !important; */
+}
+
+.give-viewing-form-in-iframe .give-gateway-option-selected #give-gateway-option-stripe_google_pay {
+    /* border-color: #fff; */
+    /* min-height: 78px !important; */
+}
+.give-viewing-form-in-iframe #give-gateway-option-stripe_apple_pay {
+    /* -webkit-appearance: -apple-pay-button; */
+    font-size: 1px !important;
+    background-origin: content-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000;
+    background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 210.2' style='enable-background:new 0 0 512 210.2;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:%23FFFFFF;stroke:%23FFFFFF;stroke-miterlimit:10;} %3C/style%3E%3Cpath id='XMLID_34_' class='st0' d='M93.6,27.1C87.6,34.2,78,39.8,68.4,39c-1.2-9.6,3.5-19.8,9-26.1c6-7.3,16.5-12.5,25-12.9 C103.4,10,99.5,19.8,93.6,27.1 M102.3,40.9c-13.9-0.8-25.8,7.9-32.4,7.9c-6.7,0-16.8-7.5-27.8-7.3c-14.3,0.2-27.6,8.3-34.9,21.2 c-15,25.8-3.9,64,10.6,85c7.1,10.4,15.6,21.8,26.8,21.4c10.6-0.4,14.8-6.9,27.6-6.9c12.9,0,16.6,6.9,27.8,6.7 c11.6-0.2,18.9-10.4,26-20.8c8.1-11.8,11.4-23.3,11.6-23.9c-0.2-0.2-22.4-8.7-22.6-34.3c-0.2-21.4,17.5-31.6,18.3-32.2 C123.3,42.9,107.7,41.3,102.3,40.9 M182.6,11.9v155.9h24.2v-53.3h33.5c30.6,0,52.1-21,52.1-51.4s-21.1-51.2-51.3-51.2L182.6,11.9 L182.6,11.9z M206.8,32.3h27.9c21,0,33,11.2,33,30.9s-12,31-33.1,31h-27.8V32.3z M336.6,169c15.2,0,29.3-7.7,35.7-19.9h0.5v18.7 h22.4V90.2c0-22.5-18-37-45.7-37c-25.7,0-44.7,14.7-45.4,34.9h21.8c1.8-9.6,10.7-15.9,22.9-15.9c14.8,0,23.1,6.9,23.1,19.6v8.6 l-30.2,1.8c-28.1,1.7-43.3,13.2-43.3,33.2C298.4,155.6,314.1,169,336.6,169z M343.1,150.5c-12.9,0-21.1-6.2-21.1-15.7 c0-9.8,7.9-15.5,23-16.4l26.9-1.7v8.8C371.9,140.1,359.5,150.5,343.1,150.5z M425.1,210.2c23.6,0,34.7-9,44.4-36.3L512,54.7h-24.6 l-28.5,92.1h-0.5l-28.5-92.1h-25.3l41,113.5l-2.2,6.9c-3.7,11.7-9.7,16.2-20.4,16.2c-1.9,0-5.6-0.2-7.1-0.4v18.7 C417.3,210,423.3,210.2,425.1,210.2z'/%3E%3C/svg%3E");
+    
+    cursor: pointer;
+    color: rgba(0,0,0,0) !important;
+    border: 4px solid #000;
+}
+.give-viewing-form-in-iframe .give-gateway-option-selected #give-gateway-option-stripe_apple_pay {
+    border-color: #fff;
+}
+.give-viewing-form-in-iframe #give_purchase_form_wrap {
+    flex: 1 1 100%;
+}
+.give-viewing-form-in-iframe #give_cc_fields {
+    position: relative;
+    padding-bottom: 40px !important;
+}
+.give-viewing-form-in-iframe #give_cc_fields:after {
+    content: '';
+    position: absolute;
+    background-image: url('credit-card-icons.png');
+    width:100%;
+    height: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    bottom: 5px;
+    left: 0;
+}
+/* RECURRING DONATION PROMPT */
+
+.give-viewing-form-in-iframe .hf-back-btn {
+    display: none;
+    padding: 0 20px;
+    height: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 6px 0 0 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+.give-viewing-form-in-iframe .give-form-navigator .back-btn {
+    color: #fff;
+}
+.give-viewing-form-in-iframe .give-form-navigator .back-btn:after,
+.give-viewing-form-in-iframe .hf-back-btn:after {
+    content: 'Back';
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    line-height: 16px;
+    vertical-align: middle;
+    color: #fff;
+    font-weight: 600;
+} 
+.give-section.choose-recurring {
+    position: absolute;
+    display: none;
+    padding-top: 50px;
+}
+
+.choose-recurring .heading {
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+}
+
+.choose-recurring .subheading {
+    padding: 10px 0 0 0;
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+}
+
+.choose-recurring .hf-donate-plea {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.choose-recurring .hf-recurring-image {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.choose-recurring .hf-recurring-image img {
+    max-width: 100%;
+}
+
+
+.choose-recurring .hf-donate-plea p {
+    text-align: center;
+}
+
+.choose-recurring button.give-btn {
+    font-size: 22px;
+    width: 100%;
+    padding: 15px 10px;
+    box-shadow: 0 1px 5px 1px rgb(0 0 0 / 36%);
+    margin-top: 10px;
+}
+
+.choose-recurring .give-btn.one {
+    background: #ed4044 !important;
+    border-color: #ed4044 !important;
+}
+
+.choose-recurring .give-btn.two {
+    background: #4c85db !important;
+    border-color: #4c85db !important;
+}
+
+.choose-recurring .give-btn.hf-donate-keep-onetime {
+    background: #fff496 !important;
+    border-color: #fff496 !important;
+    color: #424242;
+}
+
+
+/* TRIBUTES SECTION */
+
+.give-viewing-form-in-iframe h3.give-section-break.give-tributes-legend {
+    display: none;
+}
+
+.give-viewing-form-in-iframe .give_tributes_info_wrap .form-row.form-row-first.form-row-responsive {
+    margin-left: 0;
+    float: none;
+    width: 100%;
+}
+
+.give-viewing-form-in-iframe input[name="give_tributes_first_name"]::placeholder {
+    display: none;
+}
+
+.give-viewing-form-in-iframe input[name="give_tributes_last_name"] {
+    display: none;
+}
+
+.give-viewing-form-in-iframe [id*="give-tributes-ecard-notify-first-name"] {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+.give-viewing-form-in-iframe [id*="give-tributes-ecard-notify-last-name"] {
+    display: none;
+}
+
+
+/* RECEIPT */
+
+#give-receipt .details .detail {
+    flex: 1 1 40%;
+}
+
+#give-receipt .details .value {
+    flex: 1 1 40%;
+}
+
+#give-tribute-dedication-information {
+    text-align: left;
+}
+
+#give-tribute-dedication-information {
+    white-space: normal !important;
+}
+
+#give-tribute-dedication-information p {
+    margin: 0 !important;
+}
+
+/* Donate Message */
+.donate-msg {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2000px;
+    transition: all 0.7s ease-in-out;
+    z-index: 999999;
+}
+.donate-msg.show-msg {
+    top: -95px;
+}
+.paypal-press-button-msg.donate-msg.show-msg {
+    top: -90px;
+    left: 50%;
+}
+.donate-msg-inner {
+    position: relative;
+    left: -50%;
+    background: #fff;
+    box-shadow: 1px 1px 5px 0px #0000008c;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    z-index: 99999;
+}
+.paypal-press-button-msg.donate-msg .donate-msg-inner {
+    width: 200px;
+    left: 0;
+}
+
+.donate-msg.show-msg .arrow-down {
+    position: relative;
+    z-index: 99999;
+}
+.donate-msg.show-msg .arrow-down:before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 9px 0;
+    border-color:  #d9d8db transparent transparent;
+    bottom: -9px !important;
+    left: 0%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.donate-msg.show-msg .arrow-down:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 9px 0;
+    border-color: #fff transparent transparent ;
+    -moz-border-top-colors: transparent;
+    margin-bottom: -1px;
+    bottom: -8px !important;
+    left: 0%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.paypal-press-button-msg.donate-msg .arrow-down:before,
+.paypal-press-button-msg.donate-msg .arrow-down:after {
+    left: 25%;
+}
+/* Heart animation */
+
+svg {
+    cursor: pointer;
+    overflow: visible;
+    width: 40px;
+    margin: 0;
+}
+
+svg #heart {
+    transform-origin: center;
+    animation: animateHeartOut .3s linear forwards;
+}
+
+svg #main-circ {
+    transform-origin: 29.5px 29.5px;
+}
+
+.heart-checkbox {
+    display: none;
+}
+
+.heart-checkbox-label {
+    padding: 0!important;
+    margin: 0;
+    width: 30px !important;
+    line-height: 30px!important;
+    z-index: 9999 !important;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+input[type=checkbox].heart-checkbox+label:before,
+input[type=checkbox].heart-checkbox+label:after {
+    content: none;
+}
+
+.heart-checkbox:checked+label svg #heart {
+    transform: scale(0.2);
+    fill: #E2264D;
+    animation: animateHeart .3s linear forwards .25s;
+}
+
+.heart-checkbox:checked+label svg #main-circ {
+    transition: all 2s;
+    animation: animateCircle .3s linear forwards;
+    opacity: 1;
+}
+
+.heart-checkbox:checked+label svg #grp1 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp1 #oval1 {
+    transform: scale(0) translate(0, -30px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp1 #oval2 {
+    transform: scale(0) translate(10px, -50px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp2 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp2 #oval1 {
+    transform: scale(0) translate(30px, -15px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp2 #oval2 {
+    transform: scale(0) translate(60px, -15px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp3 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp3 #oval1 {
+    transform: scale(0) translate(30px, 0px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp3 #oval2 {
+    transform: scale(0) translate(60px, 10px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp4 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp4 #oval1 {
+    transform: scale(0) translate(30px, 15px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp4 #oval2 {
+    transform: scale(0) translate(40px, 50px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp5 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp5 #oval1 {
+    transform: scale(0) translate(-10px, 20px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp5 #oval2 {
+    transform: scale(0) translate(-60px, 30px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp6 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp6 #oval1 {
+    transform: scale(0) translate(-30px, 0px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp6 #oval2 {
+    transform: scale(0) translate(-60px, -5px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp7 {
+    opacity: 1;
+    transition: .1s all .3s;
+}
+
+.heart-checkbox:checked+label svg #grp7 #oval1 {
+    transform: scale(0) translate(-30px, -15px);
+    transform-origin: 0 0 0;
+    transition: .5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp7 #oval2 {
+    transform: scale(0) translate(-55px, -30px);
+    transform-origin: 0 0 0;
+    transition: 1.5s transform .3s;
+}
+
+.heart-checkbox:checked+label svg #grp2 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+.heart-checkbox:checked+label svg #grp3 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+.heart-checkbox:checked+label svg #grp4 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+.heart-checkbox:checked+label svg #grp5 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+.heart-checkbox:checked+label svg #grp6 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+.heart-checkbox:checked+label svg #grp7 {
+    opacity: 1;
+    transition: .1s opacity .3s;
+}
+
+@keyframes animateCircle {
+    40% {
+        transform: scale(10);
+        opacity: 1;
+        fill: #DD4688;
+    }
+    55% {
+        transform: scale(11);
+        opacity: 1;
+        fill: #D46ABF;
+    }
+    65% {
+        transform: scale(12);
+        opacity: 1;
+        fill: #CC8EF5;
+    }
+    75% {
+        transform: scale(13);
+        opacity: 1;
+        fill: transparent;
+        stroke: #CC8EF5;
+        stroke-width: .5;
+    }
+    85% {
+        transform: scale(17);
+        opacity: 1;
+        fill: transparent;
+        stroke: #CC8EF5;
+        stroke-width: .2;
+    }
+    95% {
+        transform: scale(18);
+        opacity: 1;
+        fill: transparent;
+        stroke: #CC8EF5;
+        stroke-width: .1;
+    }
+    100% {
+        transform: scale(19);
+        opacity: 1;
+        fill: transparent;
+        stroke: #CC8EF5;
+        stroke-width: 0;
+    }
+}
+
+@keyframes animateHeart {
+    0% {
+        transform: scale(0.2);
+    }
+    40% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes animateHeartOut {
+    0% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* SUCCESS ANIMATION */
+
+@-webkit-keyframes scaleAnimation {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleAnimation {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes drawCircle {
+    0% {
+        stroke-dashoffset: 151px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCircle {
+    0% {
+        stroke-dashoffset: 151px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes drawCheck {
+    0% {
+        stroke-dashoffset: 36px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCheck {
+    0% {
+        stroke-dashoffset: 36px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#successAnimationCircle {
+    stroke-dasharray: 151px 151px;
+    stroke: #fff;
+}
+
+#successAnimationCheck {
+    stroke-dasharray: 36px 36px;
+    stroke: #fff;
+}
+
+#successAnimationResult {
+    fill: #fff;
+    opacity: 0;
+}
+
+#successAnimation.animated {
+    -webkit-animation: 1s ease-out 0s 1 both scaleAnimation;
+    animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+
+#successAnimation.animated #successAnimationCircle {
+    -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+}
+
+#successAnimation.animated #successAnimationCheck {
+    -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+}
+
+#successAnimation.animated #successAnimationResult {
+    -webkit-animation: 0.3s linear 0.9s both fadeIn;
+    animation: 0.3s linear 0.9s both fadeIn;
+}
+
+#replay {
+    background: rgba(255, 255, 255, 0.2);
+    border: 0;
+    border-radius: 3px;
+    bottom: 100px;
+    color: #fff;
+    left: 50%;
+    outline: 0;
+    padding: 10px 30px;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#replay:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* —————————————————————————————————————————————————————————————
+= Give Form
+————————————————————————————————————————————————————————————— */
+.give-form-navigator {
+    background: #f13d32;
+    border-bottom: 1px solid #f13d32;
+}
+
+.give-form-navigator>.title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    max-width: calc(100% - 160px);
+    margin: 0 auto; 
+}
+
+.give-embed-form {
+    box-shadow: none;
+    border: 1px #e4e4e4 solid;
+}
+
+/* LIGHTBOX CSS */
+
+
+/* 
+.hf-modal {
+    display: none;
+}
+
+.hf-modal.hf-modal-show-bg {
+    display: block;
+}
+
+.hf-modal-box {
+    opacity: 0;
+    transition: opacity 1s linear;
+    position: fixed;
+    z-index: 99999991;
+    left: 50%;
+    top: calc(50% + 40px);
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 100%;
+    min-height: 150px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    color: #404040;
+}
+
+.give-section.slide-in-left .hf-modal-box,
+.give-section.slide-in-right .hf-modal-box {
+    top: calc(50% + 85px);
+}
+
+.hf-close {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    font-size: 24px;
+    z-index: 999;
+    z-index: 99999992;
+}
+
+.hf-modal-content,
+.hf-modal-additional-messages {
+    padding: 10px 20px 20px;
+    font-size: 1.2em;
+}
+
+.hf-modal-additional-messages {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s linear;
+    padding: 20px 10px 10px;
+    border-top: 1px solid gray;
+}
+
+.hf-modal.hf-modal-show-bg .hf-modal-box,
+.hf-modal.hf-modal-show-bg .hf-modal-additional-messages.hf-modal-show-additional {
+    display: block;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+.hf-modal-background {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    top: 10px;
+    bottom: 10px;
+    z-index: 9999999;
+    left: 10px;
+    right: 10px;
+    border-radius: 5px;
+}
+
+.give-section.slide-in-left .hf-modal-background,
+.give-section.slide-in-right .hf-modal-background {
+    top: 0;
+    bottom: -112px;
+    left: 0;
+    right: 0;
+}
+
+.hf-lightbox-content>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+.hf-lightbox-content .hf-recurring-image {
+    padding-top: 45px;
+    padding-bottom: 35px;
+}
+
+.hf-lightbox-content .hf-recurring-image svg {
+    max-height: 40vw;
+    width: auto;
+}
+
+.hf-lightbox-content .hf-donate-plea p {
+    text-align: center;
+}
+
+.hf-lightbox-content button.hf-donate-modify.give-btn {
+    font-size: 22px;
+    width: 100%;
+    padding: 15px 10px;
+    box-shadow: 0 1px 5px 1px rgb(0 0 0 / 36%);
+    margin-top: 35px;
+}
+
+.hf-lightbox-content .hf-donate-keep-onetime {
+    position: relative;
+}
+
+.hf-lightbox-content .hf-donate-keep-onetime:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 1px;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+.hf-lightbox-content .hf-donate-keep-onetime:hover {
+    cursor: pointer;
+}
+
+.hf-lightbox-content .hf-donate-keep-onetime:hover:after {
+    bottom: -8px;
+    opacity: 1;
+} */
+
+@media (max-width: 538px) {
+    .give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn.give-btn-level-custom {
+        font-size: 12px;
+    }
+    .give-viewing-form-in-iframe .choose-amount .give-total-wrap .give-donation-amount {
+        margin: 10px 20px !important;
+    }
+    .give-viewing-form-in-iframe .donation-type-selector {
+        margin: 0 20px !important;
+    }
+    .give-viewing-form-in-iframe .hf-advance-btn-wrapper {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+		.give-embed-form .give-select-fund-row {
+		padding: 10px !important;
+		}
+}
+
+@media (max-width: 500px) {
+    .give-viewing-form-in-iframe .give-section.payment .give-fee-recovery-donors-choice,
+    .give-viewing-form-in-iframe #donate-fieldset {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+    .give-viewing-form-in-iframe .give-section.payment .give-fee-recovery-donors-choice {
+        padding-top: 6px !important;
+    }
+   
+}
+@media (min-width: 481px) {
+    .give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li:first-child {
+        padding-right: 5px !important;
+    }
+    .give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li:last-child,
+    .give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li:nth-last-child(2) {
+        padding-left: 5px !important;
+    }
+}
+@media (max-width: 480px) {
+    .give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .give-viewing-form-in-iframe  .payment #give-payment-mode-select ul>li.give-gateway-option-selected {
+        order: 1;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .give-form-navigator>.title {
+        font-size: 15px;
+        line-height: 18px;
+    }
+		h2.hf-give-form-title {
+				font-size: 18px;
+				padding-right: 5px;
+				padding-left: 5px;
+		}
+
+		/* Donation Total amount font size on mobile */
+		.give-viewing-form-in-iframe #give-final-total-wrap .give-final-total-amount {
+				font-size: 34px !important;
+		}
+
+		/* Donation Total space on the bottom */
+		form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+    		margin-bottom: 10px !important;
+		}
+        .give-viewing-form-in-iframe .payment #give-payment-mode-select ul>li {
+            flex-basis: 100%;
+        }
+        .give-viewing-form-in-iframe form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+            display: none;
+        }
+        .give-viewing-form-in-iframe #give_purchase_form_wrap {
+            border-top: none !important;
+            z-index:99999;
+        }
+        .paypal-press-button-msg.donate-msg.show-msg {
+            top: -66px;
+            left: 0;
+        }
+        .paypal-press-button-msg.donate-msg .donate-msg-inner {
+            width: 100%;
+            left: 0;
+        }
+        .paypal-press-button-msg.donate-msg .arrow-down:before,
+        .paypal-press-button-msg.donate-msg .arrow-down:after {
+            left: 50%;
+        }
+        .give-viewing-form-in-iframe .choose-amount .give-donation-amount span.give-currency-symbol.give-currency-position-before {
+            font-size: 16px !important;
+            margin-top: -10px;
+        }
+        .give-viewing-form-in-iframe .give-currency-symbol.give-currency-position-before:after {
+            font-size: 13px;
+            content: 'Currency';
+            margin-top: 0;
+        }
+        .give-viewing-form-in-iframe .choose-amount .give-donation-amount .give-amount-top {
+            font-size: 28px !important;
+            min-width: 75px !important;
+        }
+}
+
+@media (max-width: 400px) {
+    .heart-checkbox-label {
+        top: -10px;
+        left: 34%;
+    }
+
+}
