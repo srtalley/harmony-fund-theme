@@ -1,4 +1,4 @@
-/* v1.6.3 */
+/* v1.6.5b */
 
 
 /* DONATION TABS */
@@ -543,11 +543,12 @@
 /* Hide the loader and show the form immediately */
 
 h2.hf-give-form-title {
-		font-size: 20px;
-		line-height: 1.3;
-		padding-right: 10px;
-		padding-left: 10px;
-		text-align: center;
+    font-size: 20px;
+    line-height: 1.3;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .give-viewing-form-in-iframe * {
@@ -573,17 +574,9 @@ h2.hf-give-form-title {
     color: #333 !important;
     border: none !important;
 }
-
-.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn:hover {
-    /* background: #cecece!important; */
-}
-
 .give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn.give-btn-level-custom {
     padding: 2px 8px;
     font-size: 16px;
-}
-.give-viewing-form-in-iframe .give-currency-symbol.give-currency-position-before {
-    /* text-align: center !important; */
 }
 .give-viewing-form-in-iframe .give-currency-symbol.give-currency-position-before:after {
     content: 'Choose currency';
@@ -593,19 +586,30 @@ h2.hf-give-form-title {
     margin-top: -1px;
     margin-right: -16px;
 }
-.give-viewing-form-in-iframe .give-currency-switcher-msg {
-    /* margin-left: 20px !important; */
-    /* margin-right: 20px !important; */
-}
-
-.give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap .give-donation-level-btn.give-default-level {
-    /* box-shadow: none; */
-}
-
 .give-viewing-form-in-iframe [id*=give-form] .give-recurring-donors-choice {
-    display: none;
+    order: 10;
+    margin-top: 0 !important;
 }
-
+.give-recurring-donors-choice {
+    background: #fbe763;
+}
+.give-viewing-form-in-iframe [id*=give-form] .give-recurring-donors-choice label {
+    font-size: 18px !important;
+    width: 100%;
+    padding-left: 80px !important;
+    padding-right: 5px !important;
+    margin: 0 !important;
+}
+.give-viewing-form-in-iframe [id*=give-form] .give-recurring-donors-choice:before {
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #e70a0a;
+    position: absolute;
+    top: 18px;
+    left: 53px;
+    font-size: 20px;
+}
 .give-viewing-form-in-iframe .choose-amount .give-donation-levels-wrap {
     order: 5;
     margin-top: 10px !important;
@@ -626,7 +630,17 @@ h2.hf-give-form-title {
     max-width: 100%;
     text-align: center;
 }
-
+.give-viewing-form-in-iframe .give-section.choose-amount>.form-row {
+    padding: 0 10px;
+    margin-bottom: 0;
+}
+.give-viewing-form-in-iframe .give-currency-switcher-wrap.form-row.form-row-wide {
+    /* padding: 0; */
+    order: 10;
+}
+.give-viewing-form-in-iframe .give-currency-switcher-wrap.form-row.form-row-wide .give-currency-switcher-msg {
+    margin: 0 10px 10px !important;
+}
 .give-viewing-form-in-iframe .donation-amount-period {
     order: 100;
     height: 20px;

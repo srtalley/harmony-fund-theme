@@ -1,4 +1,4 @@
-//version: 1.6.3a
+//version: 1.6.5
 
 jQuery(function($) {
 
@@ -18,6 +18,18 @@ jQuery(function($) {
 
             var current_form = $(this).parentsUntil('.give-form').parent();
 
+            $('.give-recurring-donors-choice').on('click', function() {
+                if($(this).hasClass('active')) {
+                    $(current_form).find('.donation-amount-period .one-time').fadeOut(function() {
+                        $(current_form).find('.donation-amount-period .recurring').fadeIn();
+                    });
+                } else {
+                    $(current_form).find('.donation-amount-period .recurring').fadeOut(function() {
+                        $(current_form).find('.donation-amount-period .one-time').fadeIn();
+                    });
+                }
+
+            });
             // See if this is a recurring form
             if ($(this).hasClass('give-recurring-form')) {
 
@@ -37,34 +49,34 @@ jQuery(function($) {
 
                 // Handles the click on the donation tabs - this can apply to any form 
                 // on the page
-                $('button.donation-type').on('click', function(e) {
-                    e.preventDefault();
-                    var donation_type_selector = $(this).parent();
-                    $(donation_type_selector).find('.donation-type').removeClass('selected');
-                    $(this).addClass('selected');
+                // $('button.donation-type').on('click', function(e) {
+                //     e.preventDefault();
+                //     var donation_type_selector = $(this).parent();
+                //     $(donation_type_selector).find('.donation-type').removeClass('selected');
+                //     $(this).addClass('selected');
 
-                    if ($(this).hasClass('recurring')) {
-                        $(this).find('.heart-checkbox').prop("checked", true);
-                        $(current_form).find('.give-recurring-donors-choice .give-recurring-period').prop("checked", true);
-                        $(current_form).find('.donation-amount-period .one-time').fadeOut(function() {
-                            $(current_form).find('.donation-amount-period .recurring').fadeIn();
-                        });
-                        $(current_form).find('.hf-payment-totals #give-recurring-modal-period-wrap').text(recurring_period_label);
-                        // Hide the payment wrapper 
-                        $(current_form).addClass('hide-advance-wrapper');
+                //     if ($(this).hasClass('recurring')) {
+                //         $(this).find('.heart-checkbox').prop("checked", true);
+                //         $(current_form).find('.give-recurring-donors-choice .give-recurring-period').prop("checked", true);
+                //         $(current_form).find('.donation-amount-period .one-time').fadeOut(function() {
+                //             $(current_form).find('.donation-amount-period .recurring').fadeIn();
+                //         });
+                //         $(current_form).find('.hf-payment-totals #give-recurring-modal-period-wrap').text(recurring_period_label);
+                //         // Hide the payment wrapper 
+                //         $(current_form).addClass('hide-advance-wrapper');
 
-                    } else {
-                        $(current_form).find('.heart-checkbox').prop("checked", false);
-                        $(current_form).find('.give-recurring-donors-choice .give-recurring-period').prop("checked", false);
-                        $(current_form).find('.donation-amount-period .recurring').fadeOut(function() {
-                            $('.donation-amount-period .one-time').fadeIn();
-                        });
-                        $(current_form).find('.hf-payment-totals #give-recurring-modal-period-wrap').text('One Time');
+                //     } else {
+                //         $(current_form).find('.heart-checkbox').prop("checked", false);
+                //         $(current_form).find('.give-recurring-donors-choice .give-recurring-period').prop("checked", false);
+                //         $(current_form).find('.donation-amount-period .recurring').fadeOut(function() {
+                //             $('.donation-amount-period .one-time').fadeIn();
+                //         });
+                //         $(current_form).find('.hf-payment-totals #give-recurring-modal-period-wrap').text('One Time');
                         
-                        // Show the payment wrapper
-                        $(current_form).removeClass('hide-advance-wrapper');
-                    }
-                });
+                //         // Show the payment wrapper
+                //         $(current_form).removeClass('hide-advance-wrapper');
+                //     }
+                // });
             } // recurring form
 
             // Show and hide the tribute boxes when the link is clicked
@@ -94,95 +106,93 @@ jQuery(function($) {
 
         // Add a wrapper around the donation button so we can catch events
         // and show a message if the person hasn't chosen to donate enough
-        $(document).on('click', '.hf-advance-btn-wrapper', function(e) {
+        // $(document).on('click', '.hf-advance-btn-wrapper', function(e) {
 
-            if (e.target != this) {
-                return;
-            }
-            var current_form = $(this).parentsUntil('.give-form').parent();
+        //     if (e.target != this) {
+        //         return;
+        //     }
+        //     var current_form = $(this).parentsUntil('.give-form').parent();
 
-            if ($(current_form).hasClass('give-recurring-form')) {
+        //     if ($(current_form).hasClass('give-recurring-form')) {
 
-                var min_donation_amount = $(this).attr('data-min_donation_amount');
-                var recurring_period_checkbox = $(this).parentsUntil('.give-form').parent().find('.give-recurring-donors-choice .give-recurring-period');
+        //         var min_donation_amount = $(this).attr('data-min_donation_amount');
+        //         var recurring_period_checkbox = $(this).parentsUntil('.give-form').parent().find('.give-recurring-donors-choice .give-recurring-period');
 
-                if (!$(recurring_period_checkbox).prop('checked')) {
-                    var current_give_amount = $(this).parentsUntil('.give-form').parent().find('#give-amount').val();
-                    // Get the amount in the field
-                    var currency_code = $(this).parentsUntil('.give-form').parent().attr('data-currency_code');
-                    if (currency_code == 'EUR') {
-                        var amount_entered = Number(current_give_amount.replace(',', '.'));
-                    } else {
-                        var amount_entered = Number(current_give_amount);
-                    }
+        //         if (!$(recurring_period_checkbox).prop('checked')) {
+        //             var current_give_amount = $(this).parentsUntil('.give-form').parent().find('#give-amount').val();
+        //             // Get the amount in the field
+        //             var currency_code = $(this).parentsUntil('.give-form').parent().attr('data-currency_code');
+        //             if (currency_code == 'EUR') {
+        //                 var amount_entered = Number(current_give_amount.replace(',', '.'));
+        //             } else {
+        //                 var amount_entered = Number(current_give_amount);
+        //             }
 
-                    if (amount_entered >= 50) {
-                        var new_amount_1 = Math.trunc(amount_entered * .3);
-                        var new_amount_2 = Math.trunc(amount_entered * .25);
-                    } else if (amount_entered < 50) {
-                        var new_amount_1 = Math.trunc(amount_entered * .4);
-                        var new_amount_2 = Math.trunc(amount_entered * .3);
-                    }
+        //             if (amount_entered >= 50) {
+        //                 var new_amount_1 = Math.trunc(amount_entered * .3);
+        //                 var new_amount_2 = Math.trunc(amount_entered * .25);
+        //             } else if (amount_entered < 50) {
+        //                 var new_amount_1 = Math.trunc(amount_entered * .4);
+        //                 var new_amount_2 = Math.trunc(amount_entered * .3);
+        //             }
 
-                    // see if the amounts are too low
-                    if (new_amount_2 < min_donation_amount) {
-                        new_amount_2 = min_donation_amount;
-                        new_amount_1 = min_donation_amount * 1.5;
-                    }
-                    showGiveSectionRecurring(this, current_give_amount, new_amount_1, new_amount_2);
-                } else {
-                    // Continue to the payment form with no change
-                    // $(this).find('#give-purchase-button').click();
-                    clickPurchaseButton(e.target);
-                }
-            } else {
-                // not a recurring form so just advance
-                // $(this).find('#give-purchase-button').click();
-                clickPurchaseButton(e.target);
-            }
-        });
+        //             // see if the amounts are too low
+        //             if (new_amount_2 < min_donation_amount) {
+        //                 new_amount_2 = min_donation_amount;
+        //                 new_amount_1 = min_donation_amount * 1.5;
+        //             }
+        //             showGiveSectionRecurring(this, current_give_amount, new_amount_1, new_amount_2);
+        //         } else {
+        //             // Continue to the payment form with no change
+        //             clickPurchaseButton(e.target);
+        //         }
+        //     } else {
+        //         // not a recurring form so just advance
+        //         clickPurchaseButton(e.target);
+        //     }
+        // });
 
-        // Handle the click when someone wants to keep their original donation amount
-        $('.hf-donate-keep-onetime').on('click', function(e) {
-            e.preventDefault();
-            var parent_item = $(this).parentsUntil('.give-form').parent();
-            hideGiveSectionRecurring(this);
-            setTimeout(function() {
-                // $(parent_item).find('#give-purchase-button').click();
-                clickPurchaseButton(e.target);
+        // // Handle the click when someone wants to keep their original donation amount
+        // $('.hf-donate-keep-onetime').on('click', function(e) {
+        //     e.preventDefault();
+        //     var parent_item = $(this).parentsUntil('.give-form').parent();
+        //     hideGiveSectionRecurring(this);
+        //     setTimeout(function() {
+        //         // $(parent_item).find('#give-purchase-button').click();
+        //         clickPurchaseButton(e.target);
 
-            }, 1000)
+        //     }, 1000)
 
-        });
+        // });
 
-        // Handle the click when someone wants to do recurring donation instead
-        $('.hf-donate-modify').on('click', function(e) {
-            var donate_modify_target = e.target;
-            e.preventDefault();
-            var current_section = $(donate_modify_target).parentsUntil('.give-form').parent();
+        // // Handle the click when someone wants to do recurring donation instead
+        // $('.hf-donate-modify').on('click', function(e) {
+        //     var donate_modify_target = e.target;
+        //     e.preventDefault();
+        //     var current_section = $(donate_modify_target).parentsUntil('.give-form').parent();
 
-            // get the new recurring amount
-            var recurring_amount = $(this).find('.hf-donate-new-amount').attr('data-recurring-amount');
+        //     // get the new recurring amount
+        //     var recurring_amount = $(this).find('.hf-donate-new-amount').attr('data-recurring-amount');
 
-            // change the amount - we have to focus in and out of the 
-            // box to get GiveWP to recognize the new amount
-            $(current_section).find('#give-amount').focus();
-            $(current_section).find('#give-amount').val(recurring_amount);
-            $(current_section).find('#give-amount').focusout();
+        //     // change the amount - we have to focus in and out of the 
+        //     // box to get GiveWP to recognize the new amount
+        //     $(current_section).find('#give-amount').focus();
+        //     $(current_section).find('#give-amount').val(recurring_amount);
+        //     $(current_section).find('#give-amount').focusout();
 
-            $(current_section).find('.donation-type.recurring').click();
+        //     $(current_section).find('.donation-type.recurring').click();
 
-            hideGiveSectionRecurring(this);
-            setTimeout(function() {
-                // $(current_section).find('#give-purchase-button').click();
-                clickPurchaseButton(current_section);
-            }, 1000)
-        });
+        //     hideGiveSectionRecurring(this);
+        //     setTimeout(function() {
+        //         // $(current_section).find('#give-purchase-button').click();
+        //         clickPurchaseButton(current_section);
+        //     }, 1000)
+        // });
 
-        $('.hf-back-btn').on('click', function(e) {
-            e.preventDefault();
-            hideGiveSectionRecurring(this);
-        });
+        // $('.hf-back-btn').on('click', function(e) {
+        //     e.preventDefault();
+        //     hideGiveSectionRecurring(this);
+        // });
 
         // wrap the lower payment buttons in the same correct color
         $('#give-gateway-radio-list li label').on('click', function(event) {

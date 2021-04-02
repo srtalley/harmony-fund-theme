@@ -3,7 +3,7 @@
  * PHP class to handle modifications to the GiveWP forms for the 
  * Harmony Foundation needs.
  * 
- * Version: 1.6.3
+ * Version: 1.6.5
  * Date: 2021-03-14
  */
 
@@ -32,18 +32,11 @@ class HarmonyFundGiveWPDonations {
     } // end function construct
 
     /**
-     * 
-     */
-    public function hf_give_before_paypal_buttons(){
-      echo 'HEYLLO';
-    }
-
-    /**
      * Add the JS and CSS scripts necessary for the forms
      */
     public function hf_enqueue_scripts() {
-      wp_enqueue_style( 'hf-givewp', get_stylesheet_directory_uri() . '/harmonyfund-givewp.css', [ 'give-styles' ], '1.6.3a');
-      wp_enqueue_script( 'hf-givewp', get_stylesheet_directory_uri() . '/harmonyfund-givewp.js', array( 'jquery' ), '1.6.3a' , true);
+      wp_enqueue_style( 'hf-givewp', get_stylesheet_directory_uri() . '/harmonyfund-givewp.css', [ 'give-styles' ], '1.6.5b');
+      wp_enqueue_script( 'hf-givewp', get_stylesheet_directory_uri() . '/harmonyfund-givewp.js', array( 'jquery' ), '1.6.5' , true);
     }
 
     /**
@@ -105,7 +98,7 @@ class HarmonyFundGiveWPDonations {
 
       <h2 class="hf-give-form-title"><?php echo get_the_title( $form['id'] ); ?></h2>
 
-      <div class="donation-type-selector">
+      <!-- <div class="donation-type-selector">
         <button class="donation-type one-time selected" aria-current="true" aria-disabled="true">
           <div class="button-gradient"></div>
           <div class="button-text">One Time</div>
@@ -118,7 +111,7 @@ class HarmonyFundGiveWPDonations {
           </label>
           <div class="button-text"><span class="hf-recurring-period-label">Monthly</span></div>
         </button>
-      </div>
+      </div> -->
 
       <div class="donation-amount-period">
         <p class="one-time">You are making a one-time donation.</p>
@@ -150,52 +143,49 @@ class HarmonyFundGiveWPDonations {
     /**
      * Wrap the payment button in a div so we can perform JS on it
      */
-    public function hf_give_donation_form_before_submit($form_id, $args = null) {
-      $min_donation_amount = round(get_post_meta( $form_id, '_give_custom_amount_range_minimum', true ), 2);
-      echo '<div class="hf-advance-btn-wrapper" data-min_donation_amount="' . $min_donation_amount . '">';
-
-      echo '<div class="paypal-press-button-msg donate-msg"><div class="donate-msg-inner">Press the PayPal button to complete your donation.</div><div class="arrow-down"></div></div>';
-
-      echo '<div class="stripe-press-donate-msg donate-msg"><div class="donate-msg-inner">Press Donate to complete your donation.</div><div class="arrow-down"></div></div>';
-    }
-    public function hf_give_donation_form_after_submit($form_id, $args) {
-      echo '</div>';
-    }
-    // public function hf_give_donation_form_submit_button($html, $form_id, $args) {
+    // public function hf_give_donation_form_before_submit($form_id, $args = null) {
     //   $min_donation_amount = round(get_post_meta( $form_id, '_give_custom_amount_range_minimum', true ), 2);
-    //   return '<div class="hf-advance-btn-wrapper" data-min_donation_amount="' . $min_donation_amount . '">' . $html . '</div>';
+    //   echo '<div class="hf-advance-btn-wrapper" data-min_donation_amount="' . $min_donation_amount . '">';
+
+    //   echo '<div class="paypal-press-button-msg donate-msg"><div class="donate-msg-inner">Press the PayPal button to complete your donation.</div><div class="arrow-down"></div></div>';
+
+    //   echo '<div class="stripe-press-donate-msg donate-msg"><div class="donate-msg-inner">Press Donate to complete your donation.</div><div class="arrow-down"></div></div>';
     // }
+    // public function hf_give_donation_form_after_submit($form_id, $args) {
+    //   echo '</div>';
+    // }
+
     /**
      * Adds a monthly reminder propmt at the end of the form
      */
     public function hf_add_elements_to_givewp_form_payment_section($form_id, $args) {
 
         // get the heading and sub heading fields 
-        $hf_recurring_heading = '';
-        $hf_recurring_subheading = '';
-        $hf_recurring_image = '';
-        if(function_exists('get_field')) { 
-          $hf_recurring_heading = get_field('recurring_donation_prompt_heading', $form_id);
-          $hf_recurring_subheading = get_field('recurring_donation_prompt_subheading', $form_id);
-          $image = get_field('recurring_donation_prompt_image', $form_id);
-          if( !empty( $image ) ) { 
-              $hf_recurring_image = '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-          }
-        }
-        if($hf_recurring_heading == '') {
-          $hf_recurring_heading = 'Would you like to change your donation to a smaller, <span class="hf-recurring-period-label" style="text-transform:lowercase;">monthly</span> gift?';
-        }
-        if($hf_recurring_subheading == '') {
-          $hf_recurring_subheading = 'Automatic, monthly donations help us feed and rescue more animals throughout the year. <span style="font-style: oblique;">(cancel anytime)</span>';
-        }
-        if($hf_recurring_image == '') {
-          $hf_recurring_image = '<img src="' . get_stylesheet_directory_uri() . '/images/harmonyfund-givewp-recurring.jpg">';
-        }
+        // $hf_recurring_heading = '';
+        // $hf_recurring_subheading = '';
+        // $hf_recurring_image = '';
+        // if(function_exists('get_field')) { 
+        //   $hf_recurring_heading = get_field('recurring_donation_prompt_heading', $form_id);
+        //   $hf_recurring_subheading = get_field('recurring_donation_prompt_subheading', $form_id);
+        //   $image = get_field('recurring_donation_prompt_image', $form_id);
+        //   if( !empty( $image ) ) { 
+        //       $hf_recurring_image = '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+        //   }
+        // }
+        // if($hf_recurring_heading == '') {
+        //   $hf_recurring_heading = 'Would you like to change your donation to a smaller, <span class="hf-recurring-period-label" style="text-transform:lowercase;">monthly</span> gift?';
+        // }
+        // if($hf_recurring_subheading == '') {
+        //   $hf_recurring_subheading = 'Automatic, monthly donations help us feed and rescue more animals throughout the year. <span style="font-style: oblique;">(cancel anytime)</span>';
+        // }
+        // if($hf_recurring_image == '') {
+        //   $hf_recurring_image = '<img src="' . get_stylesheet_directory_uri() . '/images/harmonyfund-givewp-recurring.jpg">';
+        // }
         ?>
+        <!-- </fieldset>
         </fieldset>
-        </fieldset>
-        </div> <!-- payment section -->
-        <div class="give-section choose-recurring">
+        </div>  --><!-- payment section -->
+        <!-- <div class="give-section choose-recurring">
         <div class="hf-donate-plea">
 
               <div class="hf-recurring-image"><?php echo $hf_recurring_image; ?></div>
@@ -207,12 +197,9 @@ class HarmonyFundGiveWPDonations {
               <p><button class="hf-donate-modify give-btn one">Donate <span class="hf-donate-new-amount one"></span>/<span class="hf-recurring-period">monthly</span></button></p>
 
               <p><button class="give-btn hf-donate-keep-onetime">Keep my one-time gift of <span class="hf-donate-original-amount"></span></button></p>
-              <!-- <p><a class="hf-donate-keep-onetime">Keep my one-time gift of <span class="hf-donate-original-amount"></span></a></p> -->
             </div>
-
-            <!-- <button class="give-btn go-back">Go back</button> -->
           <fieldset>
-            <fieldset>
+            <fieldset> --> 
       
     <?php
     }
