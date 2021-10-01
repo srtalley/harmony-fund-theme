@@ -21,12 +21,12 @@ class HarmonyFundGiveWPDonations {
       add_action ('give_donation_form_after_user_info', array($this, 'hf_give_donation_form_payment_section_top'), 10, 1);
       add_action( 'give_donation_form_after_submit', array($this, 'hf_add_elements_to_givewp_form_payment_section'), 99999, 2); 
       // add_filter('give_donation_form_submit_button', array($this,'hf_give_donation_form_submit_button'), 10, 3);
-      add_action( 'give_donation_form_before_submit', array($this, 'hf_give_donation_form_before_submit'), 10, 2);
-      add_action( 'give_donation_form_after_submit', array($this, 'hf_give_donation_form_after_submit'), 10, 2);
+      // add_action( 'give_donation_form_before_submit', array($this, 'hf_give_donation_form_before_submit'), 10, 2);
+      // add_action( 'give_donation_form_after_submit', array($this, 'hf_give_donation_form_after_submit'), 10, 2);
 
       add_action( 'give_pre_form_output', array($this, 'hf_give_payment_mode_before_gateways'), 9999);
-      add_action( 'give_paypal-commerce_cc_form', array($this, 'hf_give_donation_form_before_submit'), 1, 2);
-      add_action( 'give_paypal-commerce_cc_form', array($this, 'hf_give_donation_form_after_submit'), 10, 2);
+      // add_action( 'give_paypal-commerce_cc_form', array($this, 'hf_give_donation_form_before_submit'), 1, 2);
+      // add_action( 'give_paypal-commerce_cc_form', array($this, 'hf_give_donation_form_after_submit'), 10, 2);
 
       add_action( 'wp_enqueue_scripts', array($this, 'hf_change_paypal_localize'), 1000, 1);
     } // end function construct
@@ -188,9 +188,9 @@ class HarmonyFundGiveWPDonations {
         <!-- <div class="give-section choose-recurring">
         <div class="hf-donate-plea">
 
-              <div class="hf-recurring-image"><?php echo $hf_recurring_image; ?></div>
-              <div class="heading"><?php echo $hf_recurring_heading; ?></div>
-              <div class="subheading"><?php echo $hf_recurring_subheading; ?></div>
+              <div class="hf-recurring-image"><?php //echo $hf_recurring_image; ?></div>
+              <div class="heading"><?php //echo $hf_recurring_heading; ?></div>
+              <div class="subheading"><?php //echo $hf_recurring_subheading; ?></div>
 
               <p><button class="hf-donate-modify give-btn two">Donate <span class="hf-donate-new-amount two"></span>/<span class="hf-recurring-period">monthly</span></button></p>
 
